@@ -1,6 +1,73 @@
 from mp3_tagger import MP3File, VERSION_1, VERSION_2, VERSION_BOTH
 from os import listdir
 from os.path import isfile, join
+from unittest import TestCase 
+
+class _mp3(MP3File): 
+	
+	def __init__(self, path, name): 
+		self.path = path 
+		self.name = name  
+		
+	def parse_name(self): 
+	
+	def tag(self):
+		""" 
+		Take a MP3 file object and a dictionary and set all MP3 tags. 
+		"""
+		for key, value in self.tags.items():
+			self.key = value 	
+		mp3.save() 
+	
+	def 
+	
+class _album(): 
+	
+	def __init__(self): 
+
+class _artist(): 
+	
+	def __init__(self): 
+	
+class mp3_testing(TestCase):
+	
+	def setUp(self): 
+		self.mp3 = _mp3() 
+	
+	def test_int(self):
+		"""
+		Set any ids that are comprised of numbers only to None. 
+		"""
+		ids = {} 
+		for id_key, id_value in id_dict.items():
+			try: 
+				int(id_value) 
+				int(id_value[1:])
+			except:
+				ids[id_key] = id_value
+		return ids
+	
+	def test_invalid_str(self):
+		""" 
+		Set any tags with a complete banned string within to None. Returns a dictionary of tags. 
+		"""
+		ids = {}
+		for invalid in invalid_list:
+			for id_key, id_value in id_dict.items(): 
+				try: 
+					if invalid in id_value: 
+						id_value = None
+					ids[id_key] = id_value
+				except TypeError:
+					pass 
+		return ids
+	
+	def test_NONE_type(self):
+		ids = {}
+		for id_key, id_value in id_dict.items():
+			if id_value != None: 
+				ids[id_key] = id_value
+		return ids 
 
 def parse_name(str, split_char=' '): 
 	""" 
@@ -99,17 +166,13 @@ for file in onlyfiles:
 				tags.pop('artist', None)
 		except KeyError: 
 			pass 
-		if tags == {}: # Catche any empty ids, continue to next 
+		if tags == {}: # Catch any empty ids, continue to next 
 			continue
 		print('{} : {}'.format(file, tags))
 		user_option = input("Are these tags correct? y/n ")
 		if user_option.lower() == 'y':
 			tag_music(mp3, tags) 
 			try: 
-				accepted_artists.append(tags['artist']) #We do not want to auto-accept duplicate song names, only artist names
+				accepted_artists.append(tags['artist']) # We do not want to auto-accept duplicate song names, only artist names
 			except KeyError: 
 				pass
-		
-
-
-
